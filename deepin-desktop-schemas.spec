@@ -37,7 +37,8 @@ Obsoletes:      deepin-artwork-themes
 #grep uniontech schemas/com.deepin.dde.network-utils.gschema.xml && exit 1 || :
 
 %build
-GOPATH=%{gopath} %make_build
+#GOPATH=%{gopath} 
+%make_build
 
 %install
 %make_install PREFIX=%{_prefix}
