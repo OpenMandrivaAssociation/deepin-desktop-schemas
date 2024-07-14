@@ -12,6 +12,7 @@ BuildRequires:  python
 BuildRequires:  pkgconfig(glib-2.0)
 #add jzy
 BuildRequires:  compiler(go-compiler)
+BuildRequires:  golang-deepin-go-lib
 #BuildRequires:  golang(github.com/linuxdeepin/go-lib/keyfile)
 BuildRequires:  make
 
