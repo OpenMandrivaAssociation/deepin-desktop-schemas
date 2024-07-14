@@ -6,6 +6,9 @@ Summary:        GSettings deepin desktop-wide schemas
 License:        GPL-3.0-or-later
 URL:            https://github.com/linuxdeepin/deepin-desktop-schemas
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+# export GOPATH=`pwd`/.godeps
+# go mod download
+Source1:	deepin-desktop-schemas-6.0.6-godeps.tar.xz
 
 BuildArch:      noarch
 BuildRequires:  python
@@ -27,6 +30,7 @@ Obsoletes:      deepin-artwork-themes
 
 %prep
 %autosetup -p1
+tar xf %{S:1}
 
 # fix default background url
 #sed -i '/picture-uri/s|default_background.jpg|default.png|' \
@@ -38,7 +42,7 @@ Obsoletes:      deepin-artwork-themes
 #grep uniontech schemas/com.deepin.dde.network-utils.gschema.xml && exit 1 || :
 
 %build
-GOPATH=%{gopath} %make_build
+GOPATH=`pwd`/.godeps:%{gopath} %make_build
 
 %install
 %make_install PREFIX=%{_prefix}
