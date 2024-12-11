@@ -1,5 +1,5 @@
 Name:           deepin-desktop-schemas
-Version:        6.0.6
+Version:        6.0.7
 Release:        1
 Summary:        GSettings deepin desktop-wide schemas
 # migrated to SPDX
